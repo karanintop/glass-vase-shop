@@ -1,16 +1,9 @@
 const staticCacheName = 'CacheSpace';
 
 const assetUrls = [
-  '/icons',
-  '/images',
-  '/index1.html', 
-  '/style.css',
-  '/Order.html',
-  '/orderstyle.css',
-  '/Goods.html',
-  '/goodsstyle.css',
+  '/index.html', 
+  '/style.css'
 ]
-
 
 self.addEventListener('install', async event => {
   const cache = await caches.open(staticCacheName)

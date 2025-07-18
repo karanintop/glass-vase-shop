@@ -10,7 +10,7 @@
     <body link="383838" vlink="#383838" alink="#e1ff00">
         <div class="header_text">
             <div class="menu_head">
-                <div><a href="index1.html">Главная</a></div>
+                <div><a href="index.html">Главная</a></div>
                 <div><a href="Goods.html">Изделия</a></div>
                 <div><a href="Order.html">Заказ</a></div>
             </div>
@@ -86,9 +86,17 @@
                     <a href="index1.html">Наверх</a>
                 </div>
         <script>
-            if('serviceWorker' in navigator){
-                navigator.serviceWorker.register('/sw.js', {scope: '/'});
-            }
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('sw.js')
+                        .then(registration => {
+                            console.log('Service Worker registered with scope:', registration.scope);
+                        })
+                        .catch(error => {
+                            console.error('Service Worker registration failed:', error);
+                        });
+                });
+}
         </script>
     </body>
 </html>
